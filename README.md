@@ -6,6 +6,7 @@ Bet in your favorite team
 2. What is Truffle?
 3. Usage
 4. Tests
+5. Web3
 
 ### 1. Requirements
 - Node JS
@@ -54,3 +55,7 @@ All automated tests are into test folder
 ```
 $ truffle test
 ```
+
+### 5. Web3
+web3.js é uma coleção de bibliotecas que permitem que você interaja com um nó ethereum local ou remoto usando HTTP, IPC ou WebSocket.
+[Click here to see the documentation](https://web3js.readthedocs.io/en/v1.3.0/web3.html "Click here to see the documentation")
