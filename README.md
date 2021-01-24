@@ -5,6 +5,7 @@ Bet in your favorite team
 1. Requirements
 2. What is Truffle?
 3. Usage
+4. Tests
 
 ### 1. Requirements
 - Node JS
@@ -22,11 +23,14 @@ Bet in your favorite team
 1. Install and run all requirements
 2. clone this repository
 3. Install all dependecies (npm install)
-4. Make migrations (truffle migrate)
+4. Make migrations (truffle migrate) to create a local smart contract
 
-##### Truffle Console
-You can use truffle console to see info like address, values of variables 
-and run functions like: 
+##### Truffle Console and Develop
+
+**Truffle Console**
+It is like a browser console with server console. It's used in the same way as the browser console.
+You have real-time access to the information that is contained in the blockchain network.
+You can use to see real time infos like address, create variables and run functions. For example: 
 ```
 // loading info about the contract into app (front end)
 Brasileirao.deployed().then((instance) => { app = instance})
@@ -38,3 +42,15 @@ app.address
 app.time()
 ```
 - To access truffle console run (truffle console)
+- When you change something, you must to run truffle migrate --reset
+
+**Truffle Develop**
+
+[Click here to see more about it](https://www.trufflesuite.com/docs/truffle/getting-started/using-truffle-develop-and-the-console "Click here to see more about it")
+
+### 4. Tests
+Truffle has a test script that you can use to see if everything is okay.
+All automated tests are into test folder
+```
+$ truffle test
+```
