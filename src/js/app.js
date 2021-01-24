@@ -40,26 +40,28 @@ App = {
     $.getJSON("Brasileirao.json", (brasileirao) => {
       App.contracts.Brasileirao = TruffleContract(brasileirao);
       App.contracts.Brasileirao.setProvider(App.web3Provider);
-      // App.listenForEvents();
+      App.listenForEvents();
 
       return App.render();
     });
   },
 
-  // Listen for events emitted from the contract
-  listenForEvents: function() {
+  /**
+   * Listen for events emitted from the contract and reload App 
+   * @returns App.render();
+   */
+  listenForEvents: () => {
     App.contracts.Brasileirao.deployed().then(function(instance) {
       // Restart Chrome if you are unable to receive this event
       // This is a known issue with Metamask
       // https://github.com/MetaMask/metamask-extension/issues/2393
-      // instance.votedEvent({}, {
-      //   fromBlock: 0,
-      //   toBlock: 'latest'
-      // }).watch(function(error, event) {
-      //   console.log("event triggered", event)
-      //   // Reload when a new vote is recorded
-      //   App.render();
-      // });
+      instance.bettedEvent({}, {
+        fromBlock: 0,
+        toBlock: 'latest'
+      }).watch((error, event) => {
+        console.log("event triggered", event)
+        App.render();
+      });
     });
   },
 
@@ -78,6 +80,7 @@ App = {
     web3.eth.getCoinbase(function(err, account) {
       if (err === null) {
         App.account = account;
+        console.log(account);
         $("#accountAddress").html("Your Account: " + account);
       }
     });
@@ -108,28 +111,25 @@ App = {
           teamsSelect.append(teamOption);
         });
       }
-      // return brasileiraoInstance.voters(App.account);
+      return brasileiraoInstance.betters(App.account);
+    }).then((hasBet) => {
+      // Do not allow a user to vote
+      if(hasBet) {
+        $('form').hide();
+      }
       loader.hide();
       content.show();
-    });
-  },
-  //   .then(function(hasBet) {
-  //     // Do not allow a user to vote
-  //     if(hasBet) {
-  //       $('form').hide();
-  //     }
-  //     loader.hide();
-  //     content.show();
-  //   }).catch(function(error) {
-  //     console.warn(error);
-  //   });
-  // },
 
-  castVote: function() {
-    var teamId = $('#candidatesSelect').val();
-    App.contracts.Brasileirao.deployed().then(function(instance) {
-      return instance.vote(teamId, { from: App.account });
-    }).then(function(result) {
+    }).catch((error) =>  {
+      console.warn(error);
+    })
+  },
+
+  castVote: () => {
+    var teamId = $('#teamsSelect').val();
+    App.contracts.Brasileirao.deployed().then((instance) => {
+      return instance.bet(teamId, { from: App.account });
+    }).then((result) => {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
