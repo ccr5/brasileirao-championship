@@ -10,6 +10,7 @@ contract Brasileirao {
     }
 
     mapping(uint => Team) public teams;
+    mapping(address => bool) public betters;
     
     uint public teamsCount;
 
@@ -23,5 +24,10 @@ contract Brasileirao {
     function addTeam (string memory _name) private {
         teamsCount++;
         teams[teamsCount] = Team(teamsCount, _name, 0);
+    }
+
+    function bet(uint _teamId) public {
+        betters[msg.sender] = true;
+        teams[_teamId].betValue++;
     }
 }
