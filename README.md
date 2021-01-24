@@ -1,9 +1,16 @@
 # Brasileirao Championship
 Do you think will your favorite team win the 2022 - Brazilian Championship?
 
-** Sumary **
+**Sumary**
 
-[TOC]
+1. [What is Brasileirao Championship project](https://github.com/ccr5/brasileirao-championship#what-is-brasileirao-championship-project "What is Brasileirao Championship project")
+2. [Requirements](https://github.com/ccr5/brasileirao-championship#1-requirements "Requirements")
+3. [What is Truffle?](https://github.com/ccr5/brasileirao-championship#what-is-truffle "What is Truffle?")
+4. [Usage](https://github.com/ccr5/brasileirao-championship#usage "Usage")
+5. [Tests](https://github.com/ccr5/brasileirao-championship#tests "Tests")
+6. [Web3](https://github.com/ccr5/brasileirao-championship#web3 "Web3")
+7. [Solidity](https://github.com/ccr5/brasileirao-championship#solidity "Solidity")
+8. [Tips](https://github.com/ccr5/brasileirao-championship#tips "Tips")
 
 --------------------------
 
@@ -29,15 +36,15 @@ the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier.
 I will add my notes below but you see more [here](http://https://www.trufflesuite.com/ "here")
 
 ### artifacts
-No início da migração, dizemos a Truffle com quais contratos gostaríamos de interagir por meio do artifacts.require()método. 
-Este método é semelhante ao do Node require, mas em nosso caso, ele retorna especificamente uma abstração de contrato 
-que podemos usar no restante do nosso script de implantação.
+At the beginning of the migration, we tell Truffle which contracts we would like to interact with using 
+the artifacts.require () method. This method is similar to the one the node requires, but in our case, it specifically 
+considers an abstraction of the contract that we can use in the rest of our deployment script.
 
 ### Truffle Console and Develop
 
 **Truffle Console**
 It is like a browser console with server console. It's used in the same way as the browser console.
-You have real-time access to the information that is contained in the blockchain network.
+You have real-time access to the information that is contained in the blockchain network / EVM.
 You can use to see real time infos like address, create variables and run functions. For example: 
 ```
 // loading info about the contract into app (front end)
@@ -77,7 +84,7 @@ $ truffle test
 --------------------------
 
 # Web3
-web3.js é uma coleção de bibliotecas que permitem que você interaja com um nó ethereum local ou remoto usando HTTP, IPC ou WebSocket.
+web3.js is a collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC or WebSocket.
 [Click here to see the documentation](https://web3js.readthedocs.io/en/v1.3.0/web3.html "Click here to see the documentation")
 
 --------------------------
