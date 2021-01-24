@@ -44,6 +44,9 @@ contract("Brasileirao", (accounts) => {
       teamId = 1;
       return brasileiraoInstance.bet(teamId, { from: accounts[0] });
     }).then((receipt) => {
+      assert.equal(receipt.logs.length, 1, "an event was triggered");
+      assert.equal(receipt.logs[0].event, "bettedEvent", "the event type is correct");
+      assert.equal(receipt.logs[0].args._teamId.toNumber(), teamId, "the team id is correct");
       return brasileiraoInstance.betters(accounts[0]);
     }).then((betted) => {
       assert(betted, "the better was marked as voted");

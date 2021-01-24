@@ -3,16 +3,17 @@ pragma solidity >=0.4.2;
 
 contract Brasileirao {
 
+    uint public teamsCount;
+    mapping(uint => Team) public teams;
+    mapping(address => bool) public betters;
+
     struct Team {
         uint id;
         string name;
         uint betValue;
     }
 
-    mapping(uint => Team) public teams;
-    mapping(address => bool) public betters;
-    
-    uint public teamsCount;
+    event bettedEvent (uint indexed _teamId);
 
     constructor () public {
         addTeam("Sao Paulo");
@@ -31,5 +32,6 @@ contract Brasileirao {
         require(_teamId > 0 && _teamId < teamsCount);
         betters[msg.sender] = true;
         teams[_teamId].betValue++;
+        emit bettedEvent(_teamId);
     }
 }
