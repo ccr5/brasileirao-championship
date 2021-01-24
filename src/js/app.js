@@ -78,6 +78,7 @@ App = {
     web3.eth.getCoinbase(function(err, account) {
       if (err === null) {
         App.account = account;
+        console.log(account);
         $("#accountAddress").html("Your Account: " + account);
       }
     });
@@ -108,28 +109,25 @@ App = {
           teamsSelect.append(teamOption);
         });
       }
-      // return brasileiraoInstance.voters(App.account);
+      return brasileiraoInstance.betters(App.account);
+    }).then((hasBet) => {
+      // Do not allow a user to vote
+      if(hasBet) {
+        $('form').hide();
+      }
       loader.hide();
       content.show();
-    });
-  },
-  //   .then(function(hasBet) {
-  //     // Do not allow a user to vote
-  //     if(hasBet) {
-  //       $('form').hide();
-  //     }
-  //     loader.hide();
-  //     content.show();
-  //   }).catch(function(error) {
-  //     console.warn(error);
-  //   });
-  // },
 
-  castVote: function() {
-    var teamId = $('#candidatesSelect').val();
-    App.contracts.Brasileirao.deployed().then(function(instance) {
-      return instance.vote(teamId, { from: App.account });
-    }).then(function(result) {
+    }).catch((error) =>  {
+      console.warn(error);
+    })
+  },
+
+  castVote: () => {
+    var teamId = $('#teamsSelect').val();
+    App.contracts.Brasileirao.deployed().then((instance) => {
+      return instance.bet(teamId, { from: App.account });
+    }).then((result) => {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
