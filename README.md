@@ -1,4 +1,4 @@
-# Brasileirao Championship
+# Brasileirao Championship DApp
 Do you think will your favorite team win the 2022 - Brazilian Championship?
 
 **Sumary**
@@ -11,6 +11,7 @@ Do you think will your favorite team win the 2022 - Brazilian Championship?
 6. [Web3](https://github.com/ccr5/brasileirao-championship#web3 "Web3")
 7. [Solidity](https://github.com/ccr5/brasileirao-championship#solidity "Solidity")
 8. [Tips](https://github.com/ccr5/brasileirao-championship#tips "Tips")
+9. [Next steps](https://github.com/ccr5/brasileirao-championship#next-steps "Next steps")
 
 --------------------------
 
@@ -100,3 +101,6 @@ Solidity has two types of access:
 
 # Tips
 - run truffle unbox pet-shop to create a default project and speend up your code
+
+# Next Steps
+**Create Eniac Token:** Add a page to create a eniac wallet and buy eniac tokens
