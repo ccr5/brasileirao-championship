@@ -5,12 +5,11 @@ contract Brasileirao {
 
     uint public teamsCount;
     mapping(uint => Team) public teams;
-    mapping(address => bool) public betters;
 
     struct Team {
         uint id;
         string name;
-        uint betValue;
+        uint bets;
     }
 
     event bettedEvent (uint indexed _teamId);
@@ -28,10 +27,8 @@ contract Brasileirao {
     }
 
     function bet(uint _teamId) public {
-        require(!betters[msg.sender]);
         require(_teamId > 0 && _teamId < teamsCount);
-        betters[msg.sender] = true;
-        teams[_teamId].betValue++;
+        teams[_teamId].bets++;
         emit bettedEvent(_teamId);
     }
 }
