@@ -1,0 +1,2451 @@
+{
+  "contractName": "Brasileirao",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "_teamId",
+          "type": "uint256"
+        }
+      ],
+      "name": "bettedEvent",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "teams",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "bets",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "teamsCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_teamId",
+          "type": "uint256"
+        }
+      ],
+      "name": "bet",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_teamId\",\"type\":\"uint256\"}],\"name\":\"bettedEvent\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_teamId\",\"type\":\"uint256\"}],\"name\":\"bet\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"teams\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"bets\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"teamsCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/matt-/Documents/GITs/brasileirao-championship/contracts/Brasileirao.sol\":\"Brasileirao\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/matt-/Documents/GITs/brasileirao-championship/contracts/Brasileirao.sol\":{\"keccak256\":\"0xcfd0b3d85cea21832367fca270adf1627e0b75f0ecb67fd9597876ee654d779c\",\"urls\":[\"bzz-raw://0a400dcad32677a34c35c2b5e7921f24388607c633465a64532ebadc48e9ca31\",\"dweb:/ipfs/QmVaCa9RhAxxGoH653vaJ23zSgETkcP8w7MYYeAKdKXJYu\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506100556040518060400160405280600981526020017f53616f205061756c6f000000000000000000000000000000000000000000000081525061012660201b60201c565b6100996040518060400160405280600b81526020017f436f72696e746869616e7300000000000000000000000000000000000000000081525061012660201b60201c565b6100dd6040518060400160405280600681526020017f53616e746f73000000000000000000000000000000000000000000000000000081525061012660201b60201c565b6101216040518060400160405280600981526020017f50616c6d6569726173000000000000000000000000000000000000000000000081525061012660201b60201c565b610245565b6000808154809291906001019190505550604051806060016040528060005481526020018281526020016000815250600160008054815260200190815260200160002060008201518160000155602082015181600101908051906020019061018f9291906101a0565b506040820151816002015590505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101e157805160ff191683800117855561020f565b8280016001018555821561020f579182015b8281111561020e5782518255916020019190600101906101f3565b5b50905061021c9190610220565b5090565b61024291905b8082111561023e576000816000905550600101610226565b5090565b90565b6102b5806102546000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633ed2b77a146100465780637365870b146100fb578063c497bc4c14610129575b600080fd5b6100726004803603602081101561005c57600080fd5b8101908080359060200190929190505050610147565b6040518084815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b838110156100be5780820151818401526020810190506100a3565b50505050905090810190601f1680156100eb5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b6101276004803603602081101561011157600080fd5b8101908080359060200190929190505050610209565b005b61013161027a565b6040518082815260200191505060405180910390f35b6001602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101f95780601f106101ce576101008083540402835291602001916101f9565b820191906000526020600020905b8154815290600101906020018083116101dc57829003601f168201915b5050505050908060020154905083565b60008111801561021b57506000548111155b61022457600080fd5b6001600082815260200190815260200160002060020160008154809291906001019190505550807f64f0014fd83747b616a485884a663df111989f4c8bd242ad8730b27f5256ff0b60405160405180910390a250565b6000548156fea265627a7a72315820a8bc69c818dce14bed8593eac96b6f4bd73c0760fdfb9889b5377dabfc295e6e64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633ed2b77a146100465780637365870b146100fb578063c497bc4c14610129575b600080fd5b6100726004803603602081101561005c57600080fd5b8101908080359060200190929190505050610147565b6040518084815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b838110156100be5780820151818401526020810190506100a3565b50505050905090810190601f1680156100eb5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b6101276004803603602081101561011157600080fd5b8101908080359060200190929190505050610209565b005b61013161027a565b6040518082815260200191505060405180910390f35b6001602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101f95780601f106101ce576101008083540402835291602001916101f9565b820191906000526020600020905b8154815290600101906020018083116101dc57829003601f168201915b5050505050908060020154905083565b60008111801561021b57506000548111155b61022457600080fd5b6001600082815260200190815260200160002060020160008154809291906001019190505550807f64f0014fd83747b616a485884a663df111989f4c8bd242ad8730b27f5256ff0b60405160405180910390a250565b6000548156fea265627a7a72315820a8bc69c818dce14bed8593eac96b6f4bd73c0760fdfb9889b5377dabfc295e6e64736f6c63430005100032",
+  "sourceMap": "68:712:0:-;;;307:153;8:9:-1;5:2;;;30:1;27;20:12;5:2;307:153:0;340:20;;;;;;;;;;;;;;;;;;:7;;;:20;;:::i;:::-;371:22;;;;;;;;;;;;;;;;;;:7;;;:22;;:::i;:::-;404:17;;;;;;;;;;;;;;;;;;:7;;;:17;;:::i;:::-;432:20;;;;;;;;;;;;;;;;;;:7;;;:20;;:::i;:::-;68:712;;468:135;526:10;;:12;;;;;;;;;;;;;569:26;;;;;;;;574:10;;569:26;;;;586:5;569:26;;;;593:1;569:26;;;549:5;:17;555:10;;549:17;;;;;;;;;;;:46;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;468:135;:::o;68:712::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "68:712:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;68:712:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:34;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;127:34:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;127:34:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;611:166;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;611:166:0;;;;;;;;;;;;;;;;;:::i;:::-;;98:22;;;:::i;:::-;;;;;;;;;;;;;;;;;;;127:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;611:166::-;674:1;664:7;:11;:36;;;;;690:10;;679:7;:21;;664:36;656:45;;;;;;712:5;:14;718:7;712:14;;;;;;;;;;;:19;;;:21;;;;;;;;;;;;;761:7;749:20;;;;;;;;;;611:166;:::o;98:22::-;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.2 <0.8.0;\r\n\r\ncontract Brasileirao {\r\n\r\n    uint public teamsCount;\r\n    mapping(uint => Team) public teams;\r\n\r\n    struct Team {\r\n        uint id;\r\n        string name;\r\n        uint bets;\r\n    }\r\n\r\n    event bettedEvent (uint indexed _teamId);\r\n\r\n    constructor () public {\r\n        addTeam(\"Sao Paulo\");\r\n        addTeam(\"Corinthians\");\r\n        addTeam(\"Santos\");\r\n        addTeam(\"Palmeiras\");\r\n    }\r\n\r\n    function addTeam (string memory _name) private {\r\n        teamsCount++;\r\n        teams[teamsCount] = Team(teamsCount, _name, 0);\r\n    }\r\n\r\n    function bet(uint _teamId) public {\r\n        require(_teamId > 0 && _teamId <= teamsCount);\r\n        teams[_teamId].bets++;\r\n        emit bettedEvent(_teamId);\r\n    }\r\n}",
+  "sourcePath": "C:/Users/matt-/Documents/GITs/brasileirao-championship/contracts/Brasileirao.sol",
+  "ast": {
+    "absolutePath": "/C/Users/matt-/Documents/GITs/brasileirao-championship/contracts/Brasileirao.sol",
+    "exportedSymbols": {
+      "Brasileirao": [
+        84
+      ]
+    },
+    "id": 85,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 84,
+        "linearizedBaseContracts": [
+          84
+        ],
+        "name": "Brasileirao",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3,
+            "name": "teamsCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 84,
+            "src": "98:22:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "98:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 7,
+            "name": "teams",
+            "nodeType": "VariableDeclaration",
+            "scope": 84,
+            "src": "127:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Team_$14_storage_$",
+              "typeString": "mapping(uint256 => struct Brasileirao.Team)"
+            },
+            "typeName": {
+              "id": 6,
+              "keyType": {
+                "id": 4,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "135:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "127:21:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Team_$14_storage_$",
+                "typeString": "mapping(uint256 => struct Brasileirao.Team)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 5,
+                "name": "Team",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 14,
+                "src": "143:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Team_$14_storage_ptr",
+                  "typeString": "struct Brasileirao.Team"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Brasileirao.Team",
+            "id": 14,
+            "members": [
+              {
+                "constant": false,
+                "id": 9,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "193:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "193:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 11,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "211:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 10,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "211:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 13,
+                "name": "bets",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "233:9:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 12,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "233:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Team",
+            "nodeType": "StructDefinition",
+            "scope": 84,
+            "src": "170:80:0",
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 18,
+            "name": "bettedEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 17,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "indexed": true,
+                  "name": "_teamId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18,
+                  "src": "277:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "277:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "276:22:0"
+            },
+            "src": "258:41:0"
+          },
+          {
+            "body": {
+              "id": 37,
+              "nodeType": "Block",
+              "src": "329:131:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53616f205061756c6f",
+                        "id": 22,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "348:11:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_641f9e257791b507802af1f55faf72180ee61b7693ab3efef9d0e807d6ecf988",
+                          "typeString": "literal_string \"Sao Paulo\""
+                        },
+                        "value": "Sao Paulo"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_641f9e257791b507802af1f55faf72180ee61b7693ab3efef9d0e807d6ecf988",
+                          "typeString": "literal_string \"Sao Paulo\""
+                        }
+                      ],
+                      "id": 21,
+                      "name": "addTeam",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 57,
+                      "src": "340:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 23,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "340:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 24,
+                  "nodeType": "ExpressionStatement",
+                  "src": "340:20:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "436f72696e746869616e73",
+                        "id": 26,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "379:13:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_99e6ae11d954c0bb6a73c691370fcde1c0823195531a8520923c5b1921e564cf",
+                          "typeString": "literal_string \"Corinthians\""
+                        },
+                        "value": "Corinthians"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_99e6ae11d954c0bb6a73c691370fcde1c0823195531a8520923c5b1921e564cf",
+                          "typeString": "literal_string \"Corinthians\""
+                        }
+                      ],
+                      "id": 25,
+                      "name": "addTeam",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 57,
+                      "src": "371:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 27,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "371:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 28,
+                  "nodeType": "ExpressionStatement",
+                  "src": "371:22:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "53616e746f73",
+                        "id": 30,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "412:8:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4ec6a154e601e696368f91aca52d341c345cbbc107d908d1c27d064ccdd380ab",
+                          "typeString": "literal_string \"Santos\""
+                        },
+                        "value": "Santos"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_4ec6a154e601e696368f91aca52d341c345cbbc107d908d1c27d064ccdd380ab",
+                          "typeString": "literal_string \"Santos\""
+                        }
+                      ],
+                      "id": 29,
+                      "name": "addTeam",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 57,
+                      "src": "404:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "404:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "ExpressionStatement",
+                  "src": "404:17:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "50616c6d6569726173",
+                        "id": 34,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "440:11:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c76b8d26bc09cd9824dd9de6d44bad032288288dd00fb727b86c4876fbcae8d1",
+                          "typeString": "literal_string \"Palmeiras\""
+                        },
+                        "value": "Palmeiras"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_c76b8d26bc09cd9824dd9de6d44bad032288288dd00fb727b86c4876fbcae8d1",
+                          "typeString": "literal_string \"Palmeiras\""
+                        }
+                      ],
+                      "id": 33,
+                      "name": "addTeam",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 57,
+                      "src": "432:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "432:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "432:20:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 38,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "319:2:0"
+            },
+            "returnParameters": {
+              "id": 20,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "329:0:0"
+            },
+            "scope": 84,
+            "src": "307:153:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 56,
+              "nodeType": "Block",
+              "src": "515:88:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 44,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "526:12:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 43,
+                      "name": "teamsCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "526:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 45,
+                  "nodeType": "ExpressionStatement",
+                  "src": "526:12:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 54,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 46,
+                        "name": "teams",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7,
+                        "src": "549:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Team_$14_storage_$",
+                          "typeString": "mapping(uint256 => struct Brasileirao.Team storage ref)"
+                        }
+                      },
+                      "id": 48,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 47,
+                        "name": "teamsCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3,
+                        "src": "555:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "549:17:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Team_$14_storage",
+                        "typeString": "struct Brasileirao.Team storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 50,
+                          "name": "teamsCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3,
+                          "src": "574:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 51,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 40,
+                          "src": "586:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 52,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "593:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 49,
+                        "name": "Team",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "569:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Team_$14_storage_ptr_$",
+                          "typeString": "type(struct Brasileirao.Team storage pointer)"
+                        }
+                      },
+                      "id": 53,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "569:26:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Team_$14_memory",
+                        "typeString": "struct Brasileirao.Team memory"
+                      }
+                    },
+                    "src": "549:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Team_$14_storage",
+                      "typeString": "struct Brasileirao.Team storage ref"
+                    }
+                  },
+                  "id": 55,
+                  "nodeType": "ExpressionStatement",
+                  "src": "549:46:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 57,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addTeam",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 40,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57,
+                  "src": "486:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 39,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "486:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "485:21:0"
+            },
+            "returnParameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "515:0:0"
+            },
+            "scope": 84,
+            "src": "468:135:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 82,
+              "nodeType": "Block",
+              "src": "645:132:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 69,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 65,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 63,
+                            "name": "_teamId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 59,
+                            "src": "664:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": ">",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 64,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "674:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "664:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 68,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 66,
+                            "name": "_teamId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 59,
+                            "src": "679:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<=",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 67,
+                            "name": "teamsCount",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3,
+                            "src": "690:10:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "679:21:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "664:36:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 62,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        139,
+                        140
+                      ],
+                      "referencedDeclaration": 139,
+                      "src": "656:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 70,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "656:45:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 71,
+                  "nodeType": "ExpressionStatement",
+                  "src": "656:45:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 76,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "712:21:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 72,
+                          "name": "teams",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 7,
+                          "src": "712:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Team_$14_storage_$",
+                            "typeString": "mapping(uint256 => struct Brasileirao.Team storage ref)"
+                          }
+                        },
+                        "id": 74,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 73,
+                          "name": "_teamId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 59,
+                          "src": "718:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "712:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Team_$14_storage",
+                          "typeString": "struct Brasileirao.Team storage ref"
+                        }
+                      },
+                      "id": 75,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "bets",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13,
+                      "src": "712:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 77,
+                  "nodeType": "ExpressionStatement",
+                  "src": "712:21:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 79,
+                        "name": "_teamId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "761:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 78,
+                      "name": "bettedEvent",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18,
+                      "src": "749:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 80,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "749:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 81,
+                  "nodeType": "EmitStatement",
+                  "src": "744:25:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 83,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "bet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59,
+                  "name": "_teamId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 83,
+                  "src": "624:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 58,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "624:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "623:14:0"
+            },
+            "returnParameters": {
+              "id": 61,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "645:0:0"
+            },
+            "scope": 84,
+            "src": "611:166:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 85,
+        "src": "68:712:0"
+      }
+    ],
+    "src": "33:747:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/matt-/Documents/GITs/brasileirao-championship/contracts/Brasileirao.sol",
+      "exportedSymbols": {
+        "Brasileirao": [
+          84
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".2",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "33:31:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            84
+          ],
+          "name": "Brasileirao",
+          "scope": 85
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "teamsCount",
+              "scope": 84,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 2,
+                "name": "ElementaryTypeName",
+                "src": "98:4:0"
+              }
+            ],
+            "id": 3,
+            "name": "VariableDeclaration",
+            "src": "98:22:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "teams",
+              "scope": 84,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => struct Brasileirao.Team)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => struct Brasileirao.Team)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 4,
+                    "name": "ElementaryTypeName",
+                    "src": "135:4:0"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Team",
+                      "referencedDeclaration": 14,
+                      "type": "struct Brasileirao.Team"
+                    },
+                    "id": 5,
+                    "name": "UserDefinedTypeName",
+                    "src": "143:4:0"
+                  }
+                ],
+                "id": 6,
+                "name": "Mapping",
+                "src": "127:21:0"
+              }
+            ],
+            "id": 7,
+            "name": "VariableDeclaration",
+            "src": "127:34:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Brasileirao.Team",
+              "name": "Team",
+              "scope": 84,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "id",
+                  "scope": 14,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 8,
+                    "name": "ElementaryTypeName",
+                    "src": "193:4:0"
+                  }
+                ],
+                "id": 9,
+                "name": "VariableDeclaration",
+                "src": "193:7:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "name",
+                  "scope": 14,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 10,
+                    "name": "ElementaryTypeName",
+                    "src": "211:6:0"
+                  }
+                ],
+                "id": 11,
+                "name": "VariableDeclaration",
+                "src": "211:11:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "bets",
+                  "scope": 14,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 12,
+                    "name": "ElementaryTypeName",
+                    "src": "233:4:0"
+                  }
+                ],
+                "id": 13,
+                "name": "VariableDeclaration",
+                "src": "233:9:0"
+              }
+            ],
+            "id": 14,
+            "name": "StructDefinition",
+            "src": "170:80:0"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "bettedEvent"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "_teamId",
+                      "scope": 18,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 15,
+                        "name": "ElementaryTypeName",
+                        "src": "277:4:0"
+                      }
+                    ],
+                    "id": 16,
+                    "name": "VariableDeclaration",
+                    "src": "277:20:0"
+                  }
+                ],
+                "id": 17,
+                "name": "ParameterList",
+                "src": "276:22:0"
+              }
+            ],
+            "id": 18,
+            "name": "EventDefinition",
+            "src": "258:41:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 84,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 19,
+                "name": "ParameterList",
+                "src": "319:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 20,
+                "name": "ParameterList",
+                "src": "329:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_641f9e257791b507802af1f55faf72180ee61b7693ab3efef9d0e807d6ecf988",
+                                  "typeString": "literal_string \"Sao Paulo\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 57,
+                              "type": "function (string memory)",
+                              "value": "addTeam"
+                            },
+                            "id": 21,
+                            "name": "Identifier",
+                            "src": "340:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "53616f205061756c6f",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Sao Paulo\"",
+                              "value": "Sao Paulo"
+                            },
+                            "id": 22,
+                            "name": "Literal",
+                            "src": "348:11:0"
+                          }
+                        ],
+                        "id": 23,
+                        "name": "FunctionCall",
+                        "src": "340:20:0"
+                      }
+                    ],
+                    "id": 24,
+                    "name": "ExpressionStatement",
+                    "src": "340:20:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_99e6ae11d954c0bb6a73c691370fcde1c0823195531a8520923c5b1921e564cf",
+                                  "typeString": "literal_string \"Corinthians\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 57,
+                              "type": "function (string memory)",
+                              "value": "addTeam"
+                            },
+                            "id": 25,
+                            "name": "Identifier",
+                            "src": "371:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "436f72696e746869616e73",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Corinthians\"",
+                              "value": "Corinthians"
+                            },
+                            "id": 26,
+                            "name": "Literal",
+                            "src": "379:13:0"
+                          }
+                        ],
+                        "id": 27,
+                        "name": "FunctionCall",
+                        "src": "371:22:0"
+                      }
+                    ],
+                    "id": 28,
+                    "name": "ExpressionStatement",
+                    "src": "371:22:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_4ec6a154e601e696368f91aca52d341c345cbbc107d908d1c27d064ccdd380ab",
+                                  "typeString": "literal_string \"Santos\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 57,
+                              "type": "function (string memory)",
+                              "value": "addTeam"
+                            },
+                            "id": 29,
+                            "name": "Identifier",
+                            "src": "404:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "53616e746f73",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Santos\"",
+                              "value": "Santos"
+                            },
+                            "id": 30,
+                            "name": "Literal",
+                            "src": "412:8:0"
+                          }
+                        ],
+                        "id": 31,
+                        "name": "FunctionCall",
+                        "src": "404:17:0"
+                      }
+                    ],
+                    "id": 32,
+                    "name": "ExpressionStatement",
+                    "src": "404:17:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_c76b8d26bc09cd9824dd9de6d44bad032288288dd00fb727b86c4876fbcae8d1",
+                                  "typeString": "literal_string \"Palmeiras\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 57,
+                              "type": "function (string memory)",
+                              "value": "addTeam"
+                            },
+                            "id": 33,
+                            "name": "Identifier",
+                            "src": "432:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "50616c6d6569726173",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Palmeiras\"",
+                              "value": "Palmeiras"
+                            },
+                            "id": 34,
+                            "name": "Literal",
+                            "src": "440:11:0"
+                          }
+                        ],
+                        "id": 35,
+                        "name": "FunctionCall",
+                        "src": "432:20:0"
+                      }
+                    ],
+                    "id": 36,
+                    "name": "ExpressionStatement",
+                    "src": "432:20:0"
+                  }
+                ],
+                "id": 37,
+                "name": "Block",
+                "src": "329:131:0"
+              }
+            ],
+            "id": 38,
+            "name": "FunctionDefinition",
+            "src": "307:153:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "addTeam",
+              "scope": 84,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_name",
+                      "scope": 57,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 39,
+                        "name": "ElementaryTypeName",
+                        "src": "486:6:0"
+                      }
+                    ],
+                    "id": 40,
+                    "name": "VariableDeclaration",
+                    "src": "486:19:0"
+                  }
+                ],
+                "id": 41,
+                "name": "ParameterList",
+                "src": "485:21:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 42,
+                "name": "ParameterList",
+                "src": "515:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "++",
+                          "prefix": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 3,
+                              "type": "uint256",
+                              "value": "teamsCount"
+                            },
+                            "id": 43,
+                            "name": "Identifier",
+                            "src": "526:10:0"
+                          }
+                        ],
+                        "id": 44,
+                        "name": "UnaryOperation",
+                        "src": "526:12:0"
+                      }
+                    ],
+                    "id": 45,
+                    "name": "ExpressionStatement",
+                    "src": "526:12:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct Brasileirao.Team storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct Brasileirao.Team storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7,
+                                  "type": "mapping(uint256 => struct Brasileirao.Team storage ref)",
+                                  "value": "teams"
+                                },
+                                "id": 46,
+                                "name": "Identifier",
+                                "src": "549:5:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 3,
+                                  "type": "uint256",
+                                  "value": "teamsCount"
+                                },
+                                "id": 47,
+                                "name": "Identifier",
+                                "src": "555:10:0"
+                              }
+                            ],
+                            "id": 48,
+                            "name": "IndexAccess",
+                            "src": "549:17:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct Brasileirao.Team memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 14,
+                                  "type": "type(struct Brasileirao.Team storage pointer)",
+                                  "value": "Team"
+                                },
+                                "id": 49,
+                                "name": "Identifier",
+                                "src": "569:4:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 3,
+                                  "type": "uint256",
+                                  "value": "teamsCount"
+                                },
+                                "id": 50,
+                                "name": "Identifier",
+                                "src": "574:10:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 40,
+                                  "type": "string memory",
+                                  "value": "_name"
+                                },
+                                "id": 51,
+                                "name": "Identifier",
+                                "src": "586:5:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 52,
+                                "name": "Literal",
+                                "src": "593:1:0"
+                              }
+                            ],
+                            "id": 53,
+                            "name": "FunctionCall",
+                            "src": "569:26:0"
+                          }
+                        ],
+                        "id": 54,
+                        "name": "Assignment",
+                        "src": "549:46:0"
+                      }
+                    ],
+                    "id": 55,
+                    "name": "ExpressionStatement",
+                    "src": "549:46:0"
+                  }
+                ],
+                "id": 56,
+                "name": "Block",
+                "src": "515:88:0"
+              }
+            ],
+            "id": 57,
+            "name": "FunctionDefinition",
+            "src": "468:135:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "bet",
+              "scope": 84,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_teamId",
+                      "scope": 83,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 58,
+                        "name": "ElementaryTypeName",
+                        "src": "624:4:0"
+                      }
+                    ],
+                    "id": 59,
+                    "name": "VariableDeclaration",
+                    "src": "624:12:0"
+                  }
+                ],
+                "id": 60,
+                "name": "ParameterList",
+                "src": "623:14:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 61,
+                "name": "ParameterList",
+                "src": "645:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                139,
+                                140
+                              ],
+                              "referencedDeclaration": 139,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 62,
+                            "name": "Identifier",
+                            "src": "656:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "&&",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": ">",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 59,
+                                      "type": "uint256",
+                                      "value": "_teamId"
+                                    },
+                                    "id": 63,
+                                    "name": "Identifier",
+                                    "src": "664:7:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 64,
+                                    "name": "Literal",
+                                    "src": "674:1:0"
+                                  }
+                                ],
+                                "id": 65,
+                                "name": "BinaryOperation",
+                                "src": "664:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "<=",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 59,
+                                      "type": "uint256",
+                                      "value": "_teamId"
+                                    },
+                                    "id": 66,
+                                    "name": "Identifier",
+                                    "src": "679:7:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 3,
+                                      "type": "uint256",
+                                      "value": "teamsCount"
+                                    },
+                                    "id": 67,
+                                    "name": "Identifier",
+                                    "src": "690:10:0"
+                                  }
+                                ],
+                                "id": 68,
+                                "name": "BinaryOperation",
+                                "src": "679:21:0"
+                              }
+                            ],
+                            "id": 69,
+                            "name": "BinaryOperation",
+                            "src": "664:36:0"
+                          }
+                        ],
+                        "id": 70,
+                        "name": "FunctionCall",
+                        "src": "656:45:0"
+                      }
+                    ],
+                    "id": 71,
+                    "name": "ExpressionStatement",
+                    "src": "656:45:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "++",
+                          "prefix": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "bets",
+                              "referencedDeclaration": 13,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct Brasileirao.Team storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 7,
+                                      "type": "mapping(uint256 => struct Brasileirao.Team storage ref)",
+                                      "value": "teams"
+                                    },
+                                    "id": 72,
+                                    "name": "Identifier",
+                                    "src": "712:5:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 59,
+                                      "type": "uint256",
+                                      "value": "_teamId"
+                                    },
+                                    "id": 73,
+                                    "name": "Identifier",
+                                    "src": "718:7:0"
+                                  }
+                                ],
+                                "id": 74,
+                                "name": "IndexAccess",
+                                "src": "712:14:0"
+                              }
+                            ],
+                            "id": 75,
+                            "name": "MemberAccess",
+                            "src": "712:19:0"
+                          }
+                        ],
+                        "id": 76,
+                        "name": "UnaryOperation",
+                        "src": "712:21:0"
+                      }
+                    ],
+                    "id": 77,
+                    "name": "ExpressionStatement",
+                    "src": "712:21:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 18,
+                              "type": "function (uint256)",
+                              "value": "bettedEvent"
+                            },
+                            "id": 78,
+                            "name": "Identifier",
+                            "src": "749:11:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 59,
+                              "type": "uint256",
+                              "value": "_teamId"
+                            },
+                            "id": 79,
+                            "name": "Identifier",
+                            "src": "761:7:0"
+                          }
+                        ],
+                        "id": 80,
+                        "name": "FunctionCall",
+                        "src": "749:20:0"
+                      }
+                    ],
+                    "id": 81,
+                    "name": "EmitStatement",
+                    "src": "744:25:0"
+                  }
+                ],
+                "id": 82,
+                "name": "Block",
+                "src": "645:132:0"
+              }
+            ],
+            "id": 83,
+            "name": "FunctionDefinition",
+            "src": "611:166:0"
+          }
+        ],
+        "id": 84,
+        "name": "ContractDefinition",
+        "src": "68:712:0"
+      }
+    ],
+    "id": 85,
+    "name": "SourceUnit",
+    "src": "33:747:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0x64f0014fd83747b616a485884a663df111989f4c8bd242ad8730b27f5256ff0b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "_teamId",
+              "type": "uint256"
+            }
+          ],
+          "name": "bettedEvent",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x79B92d9bB13acD322b64Fc9916179226500B35D5",
+      "transactionHash": "0x3cc2825e094409db46751e07b6fd974a9a3e435a73bfa71b3f9f762eca8f1904"
+    }
+  },
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-01-25T15:29:47.533Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
