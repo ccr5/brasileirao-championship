@@ -47,9 +47,6 @@ contract("Brasileirao", (accounts) => {
       assert.equal(receipt.logs.length, 1, "an event was triggered");
       assert.equal(receipt.logs[0].event, "bettedEvent", "the event type is correct");
       assert.equal(receipt.logs[0].args._teamId.toNumber(), teamId, "the team id is correct");
-      return brasileiraoInstance.betters(accounts[0]);
-    }).then((betted) => {
-      assert(betted, "the better was marked as voted");
       return brasileiraoInstance.teams(teamId);
     }).then((team) => {
       const betValue = team[2];
@@ -71,30 +68,6 @@ contract("Brasileirao", (accounts) => {
     }).then((team2) => {
       const betValue = team2[2];
       assert.equal(betValue, 0, "team 2 did not receive any votes");
-    });
-  });
-
-  it("throws an exception for double voting", () => {
-    return Brasileirao.deployed().then((instance) => {
-      brasileiraoInstance = instance;
-      teamId = 2;
-      brasileiraoInstance.bet(teamId, { from: accounts[1] });
-      return brasileiraoInstance.teams(teamId);
-    }).then((team) => {
-      const betValue = team[2];
-      assert.equal(betValue, 1, "accepts first vote");
-      // Try to vote again
-      return brasileiraoInstance.bet(teamId, { from: accounts[1] });
-    }).then(assert.fail).catch((error) => {
-      assert(error.message.indexOf('revert') >= 0, "error message must contain revert");
-      return brasileiraoInstance.teams(1);
-    }).then((team1) => {
-      const betValue = team1[2];
-      assert.equal(betValue, 1, "team 1 did not receive any votes");
-      return brasileiraoInstance.teams(2);
-    }).then((team2) => {
-      const betValue = team2[2];
-      assert.equal(betValue, 1, "team 2 did not receive any votes");
     });
   });
 });
