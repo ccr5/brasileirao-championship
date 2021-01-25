@@ -4,19 +4,24 @@ import Progress from './Progress'
 
 export default class Content extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      progressPercent: (Math.ceil(this.props.tokensSold) / this.props.totalSupply) * 100
+    }
+  }
+
   render() {
     return (
       <div id="content">
-        <p>
-          Introducing "DApp Token" (DAPP)!
-          Token price is <span className="token-price"></span> Ether. You currently have <span className="dapp-balance"></span>&nbsp;DAPP.
-        </p>
+        <p> Token price is {`${this.props.tokenPrice}`} Ether. </p>
+        <p> You currently have {`${this.props.currentBalance}`} ENIAC. </p>
         <br />
-        <EniacForm />
-        <Progress />
-        <p><span className="tokens-sold"></span> / <span className="tokens-available"></span> tokens sold</p>
+        <EniacForm buyTokens={this.props.buyTokens} />
+        <Progress progress={this.state.progressPercent} />
+        <p>{`${this.props.tokensSold}`} / {`${this.props.totalSupply}`} tokens sold</p>
         <hr />
-        <p id="accountAddress"></p>
+        <p id="accountAddress">Your account: {this.props.account}</p>
       </div>
     )
   }

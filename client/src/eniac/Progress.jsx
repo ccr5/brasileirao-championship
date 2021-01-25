@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
 export default class Progress extends Component {
+
+  componentDidMount = () => {
+    const bar = document.getElementById("progress")
+    bar.style.width = `${this.props.progress}%`
+  }
+
   render() {
     return (
       <div className="progress">
