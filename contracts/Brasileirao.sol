@@ -27,7 +27,7 @@ contract Brasileirao {
     }
 
     function bet(uint _teamId) public {
-        require(_teamId > 0 && _teamId < teamsCount);
+        require(_teamId > 0 && _teamId <= teamsCount);
         teams[_teamId].bets++;
         emit bettedEvent(_teamId);
     }

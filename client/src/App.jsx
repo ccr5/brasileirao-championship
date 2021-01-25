@@ -19,10 +19,17 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
-    this.loadBlockchainData()
+  componentDidMount = async () => {
+    this.setState({ loading: true })
+    await this.loadBlockchainData()
+    await this.loadTeamsData()
+    this.setState({ loading: false })
   }
 
+  /**
+   * Connect with Web3 and get account hash
+   * @returns void
+   */
   async loadBlockchainData() {
     const web3 = await getWeb3();
     const accounts = await web3.eth.getAccounts();
@@ -37,7 +44,14 @@ class App extends Component {
       brasileirao,
       account: accounts[0],
     })
+  }
 
+  /**
+   * Reload teams dictionary with current datas
+   * @returns void
+   */
+  async loadTeamsData() {
+    this.setState({ teams: [] })
     const teamsCount = await this.state.brasileirao.methods.teamsCount().call()
 
     for (let i = 1; i <= teamsCount; i++) {
@@ -46,21 +60,20 @@ class App extends Component {
         teams: [...this.state.teams, team]
       })
     }
-
-    this.setState({ loading: false })
   }
 
-  bet = async (teamId) => {
+  bet = (teamId) => {
     this.setState({ loading: true })
     this.state.brasileirao.methods.bet(teamId).send({ from: this.state.account })
-      .then((result) => {
-        console.log(result)
+      .then(async () => {
         alert("Ok")
-        this.loadBlockchainData()
-        this.setState({ loading: false })
+        await this.loadTeamsData()
       })
       .catch((err) => {
-        alert("Erro")
+        alert("Something is wrong!")
+      })
+      .finally(() => {
+        this.setState({ loading: false })
       })
   }
 

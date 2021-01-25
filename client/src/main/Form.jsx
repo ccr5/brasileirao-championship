@@ -10,6 +10,7 @@ export default class Form extends Component {
   }
 
   getTeam = (e) => {
+    e.preventDefault()
     this.setState({
       selectedTeam: +e.target.value
     })
@@ -21,23 +22,22 @@ export default class Form extends Component {
 
   render() {
     return (
-      <form>
-        <div className="form-group">
-          <label htmlFor="teamsSelect">Selecione o time: </label>
-          <select className="form-control" id="teamsSelect" onChange={(e) => {
-            e.preventDefault()
-            this.getTeam(e)
-          }}>
-            {
-              this.props.teams.map((team, key) => {
-                return (<option value={team.id}>{team.name}</ option>)
-              })
-            }
-          </select>
-        </div>
-        <button type="submit" className="btn btn-primary" onClick={(e) => { this.saveTeamId() }}>Bet</button>
-        <hr />
-      </form>
+      <>
+        <form>
+          <div className="form-group">
+            <label htmlFor="teamsSelect">Selecione o time: </label>
+            <select className="form-control" id="teamsSelect" onChange={(e) => { this.getTeam(e) }}>
+              {
+                this.props.teams.map((team, key) => {
+                  return (<option key={team.id} value={team.id}>{team.name}</ option>)
+                })
+              }
+            </select>
+          </div>
+          <button type="submit" className="btn btn-primary" onClick={(e) => { this.saveTeamId() }}>Bet</button>
+          <hr />
+        </form>
+      </>
     )
   }
 }

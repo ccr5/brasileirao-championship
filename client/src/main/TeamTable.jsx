@@ -20,8 +20,8 @@ export default class TeamTable extends Component {
           {
             this.props.teams.map((team, key) => {
               return (
-                <tr>
-                  <td>{key + 1}</td>
+                <tr key={team.id}>
+                  <td>{team.id}</td>
                   <td>{team.name}</td>
                   <td>{team.bets}</td>
                 </tr>
