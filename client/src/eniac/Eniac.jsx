@@ -38,11 +38,10 @@ class Eniac extends Component {
    */
   async loadBlockchainData() {
     const web3 = await getWeb3();
-    const accounts = await web3.eth.getAccounts();
+    const accounts = await web3.eth.getCoinbase();
     const networkId = await web3.eth.net.getId();
     const eniacNetwork = EniacContract.networks[networkId];
     const walletNetwork = EniacWalletContract.networks[networkId];
-    web3.providers.HttpProvider.prototype.sendAsync = web3.providers.HttpProvider.prototype.send
 
     const eniac = new web3.eth.Contract(
       EniacContract.abi,
@@ -58,7 +57,7 @@ class Eniac extends Component {
       web3,
       eniac,
       eniacWallet,
-      account: accounts[0],
+      account: accounts,
     })
   }
 
