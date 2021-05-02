@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ccr5/brasileirao-championship-dapp">
-    <img src="img/logo.png" alt="Logo" width="150">
+    <img src="images/logo.png" alt="Logo" width="150">
   </a>
 
   <h3 align="center">Brasileirao Championship dApp</h3>
@@ -99,7 +99,7 @@ To get a local copy up and running follow these simple example steps.
 
 <p align="center">
   <a href="https://github.com/ccr5/brasileirao-championship-dapp">
-    <img src="img/home.png" alt="Logo" width="100%">
+    <img src="images/home.png" alt="Logo" width="100%">
   </a>
   with your metamask connected to the Ganache network and an imported account 
   (it cannot be the one running the contracts), choose your team and bet.
