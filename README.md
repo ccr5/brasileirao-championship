@@ -85,10 +85,6 @@ To get a local copy up and running follow these simple example steps.
     ```sh
     truffle migrate 
     ```
-4. Exec Ecto migrates
-   ```sh
-   mix ecto-migrate
-   ```
 4. Start server
    ```sh
    cd client && yarn start
